@@ -1,0 +1,28 @@
+<!-- templates/post.html -->
+
+<h2>{{ post.title }}</h2>
+{{ post.content_html | safe }}
+
+
+{% for post in posts.items %}
+    <!-- Display each post -->
+{% endfor %}
+
+<!-- Add pagination navigation -->
+<div class="pagination">
+    <span class="step-links">
+        {% if posts.has_prev %}
+            <a href="{{ url_for('list_posts', page=posts.prev_num) }}">&laquo; prev</a>
+        {% endif %}
+        {% for page_num in posts.iter_pages() %}
+            {% if posts.page == page_num %}
+                <span class="current">{{ page_num }}</span>
+            {% else %}
+                <a href="{{ url_for('list_posts', page=page_num) }}">{{ page_num }}</a>
+            {% endif %}
+        {% endfor %}
+        {% if posts.has_next %}
+            <a href="{{ url_for('list_posts', page=posts.next_num) }}">next &raquo;</a>
+        {% endif %}
+    </span>
+</div>

@@ -1,0 +1,39 @@
+<!-- templates/landing.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>WeBlog</title>
+    <!-- Add any additional stylesheets or meta tags as needed -->
+</head>
+<body>
+    <header>
+        <h1>Welcome to WeBlog</h1>
+        <p>Where you can share and discover amazing stories.</p>
+    </header>
+
+    <section>
+        <h2>Key Features</h2>
+        <ul>
+            <li>Write and publish your own blog posts.</li>
+            <li>Connect with other users through likes and comments.</li>
+            <li>Explore a diverse range of topics and perspectives.</li>
+            <!-- Add more features as needed -->
+        </ul>
+    </section>
+
+    <section>
+        <h2>Get Started</h2>
+        <p>Ready to start sharing your stories or exploring others' work?</p>
+        <a href="{{ url_for('register') }}">Sign Up</a>
+        <a href="{{ url_for('login') }}">Log In</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 WeBlog. All rights reserved.</p>
+    </footer>
+</body>
+</html>
